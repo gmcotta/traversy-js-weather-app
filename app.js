@@ -1,5 +1,6 @@
 const city = 'Guarulhos';
 const weather = new Weather(city);
+const ui = new UI();
 
 document.addEventListener('DOMContentLoaded', getWeather);
 
@@ -7,7 +8,7 @@ document.addEventListener('DOMContentLoaded', getWeather);
 
 function getWeather() {
   weather.getWeather()
-    .then(data => console.log(data))
+    .then(data => ui.paint(data))
     .catch(err => console.log(err));
 }
 
